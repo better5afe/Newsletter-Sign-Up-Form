@@ -20,7 +20,7 @@ const NewsletterInfo = () => {
 								<circle cx='10.5' cy='10.5' r='10.5' fill='#FF6155' />
 								<path
 									stroke='#FFF'
-									stroke-width='2'
+									strokeWidth='2'
 									d='M6 11.381 8.735 14 15 8'
 								/>
 							</g>
@@ -40,7 +40,7 @@ const NewsletterInfo = () => {
 								<circle cx='10.5' cy='10.5' r='10.5' fill='#FF6155' />
 								<path
 									stroke='#FFF'
-									stroke-width='2'
+									strokeWidth='2'
 									d='M6 11.381 8.735 14 15 8'
 								/>
 							</g>
@@ -60,7 +60,7 @@ const NewsletterInfo = () => {
 								<circle cx='10.5' cy='10.5' r='10.5' fill='#FF6155' />
 								<path
 									stroke='#FFF'
-									stroke-width='2'
+									strokeWidth='2'
 									d='M6 11.381 8.735 14 15 8'
 								/>
 							</g>
