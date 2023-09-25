@@ -4,4 +4,20 @@
 	top: 0;
 	height: 284px;
 	background-image: url('../assets/images/illustration-sign-up-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-bottom-right-radius: 3rem;
+	border-bottom-left-radius: 3rem;
+}
+
+@media (min-width: 992px) {
+	.hero {
+		position: static;
+		height: 593px;
+		width: 400px;
+		background-image: url('../assets/images/illustration-sign-up-desktop.svg');
+		border-radius: 2rem;
+		order: 1;
+	}
 }

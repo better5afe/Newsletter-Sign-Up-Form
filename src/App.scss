@@ -11,8 +11,18 @@
 	}
 }
 
-@media (minw-width: 992px) {
+@media (min-width: 992px) {
 	.main {
-		border-radius: 1rem;
+		position: static;
+		display: flex;
+		width: 900px;
+		min-height: 0;
+		height: 100%;
+		padding: 1.2em;
+		border-radius: 2rem;
+
+		&--confirmation {
+			padding: 0;
+		}
 	}
 }

@@ -24,3 +24,12 @@ input::placeholder {
 	font-size: 1.5rem;
 	color: colors.$dark-slate-grey;
 }
+
+@media (min-width: 992px) {
+	body {
+		min-height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
