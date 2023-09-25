@@ -2,9 +2,11 @@ import HeroSection from './components/HeroSection';
 import FormSection from './components/FormSection';
 import ConfirmationSection from './components/ConfirmationSection';
 
+import './App.scss'
+
 const App = () => {
 	return (
-		<main>
+		<main className='main'>
 			<HeroSection />
 			<FormSection />
 			<ConfirmationSection />

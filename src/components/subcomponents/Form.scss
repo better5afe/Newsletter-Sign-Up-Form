@@ -1,0 +1,45 @@
+@use '../../assets/colors.scss';
+
+.form {
+	padding: 1em 0 1.8em;
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 0.8em;
+		font-size: 1.3rem;
+		font-weight: 700;
+
+		&-error {
+			color: colors.$tomato;
+			opacity: 0;
+
+			&--visible {
+				opacity: 1;
+			}
+		}
+	}
+
+	&__input {
+		width: 100%;
+		padding: 1em;
+		margin-bottom: 1.5em;
+		border: 1px solid colors.$grey;
+		border-radius: 1rem;
+		outline: none;
+		transition: border 0.2s;
+
+		&::placeholder {
+			color: colors.$grey;
+		}
+
+		&:focus {
+			border: 1px solid colors.$dark-slate-grey;
+		}
+
+		&--error {
+			background: colors.$tomato-bg;
+			border: 1px solid colors.$tomato;
+			color: colors.$tomato;
+		}
+	}
+}

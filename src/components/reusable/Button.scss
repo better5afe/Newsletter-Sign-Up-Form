@@ -1,0 +1,38 @@
+@use '../../assets/colors.scss';
+
+.button {
+	position: relative;
+	width: 100%;
+	padding: 1.2em 1em;
+	background: colors.$dark-slate-grey;
+	border: none;
+	border-radius: 1rem;
+	outline: none;
+	color: colors.$white;
+	font-weight: bolder;
+	cursor: pointer;
+	overflow: hidden;
+    z-index: 1;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		content: '';
+		background: rgb(255, 81, 115);
+		background: linear-gradient(
+			90deg,
+			rgba(255, 81, 115, 1) 50%,
+			rgba(255, 99, 79, 1) 100%
+		);
+		opacity: 0;
+		transition: opacity 0.3s;
+		z-index: -1;
+	}
+
+	&:hover::before, &:focus::before {
+		opacity: 1;
+	}
+}

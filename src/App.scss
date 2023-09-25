@@ -1,0 +1,14 @@
+@use './assets/colors.scss';
+
+.main {
+	position: relative;
+	background: colors.$white;
+	min-height: 100vh;
+	padding-top: 300px;
+}
+
+@media (minw-width: 992px) {
+	.main {
+		border-radius: 1rem;
+	}
+}

@@ -14,7 +14,6 @@ html {
 
 body {
 	background: colors.$charcoal-grey;
-	color: colors.$charcoal-grey;
 }
 
 body,
@@ -23,4 +22,5 @@ input,
 input::placeholder {
 	font-family: 'Roboto', sans-serif;
 	font-size: 1.5rem;
+	color: colors.$dark-slate-grey;
 }
