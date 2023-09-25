@@ -1,0 +1,26 @@
+@use './assets/colors.scss';
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	background: colors.$charcoal-grey;
+	color: colors.$charcoal-grey;
+}
+
+body,
+button,
+input,
+input::placeholder {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.5rem;
+}

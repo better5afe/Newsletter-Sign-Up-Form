@@ -1,5 +1,15 @@
-const App = () => {
-  return <div>Hello World!</div>
-}
+import HeroSection from './components/HeroSection';
+import FormSection from './components/FormSection';
+import ConfirmationSection from './components/ConfirmationSection';
 
-export default App
+const App = () => {
+	return (
+		<main>
+			<HeroSection />
+			<FormSection />
+			<ConfirmationSection />
+		</main>
+	);
+};
+
+export default App;
