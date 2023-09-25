@@ -6,9 +6,9 @@ import './App.scss'
 
 const App = () => {
 	return (
-		<main className='main'>
-			<HeroSection />
-			<FormSection />
+		<main className='main main--confirmation'>
+			{/* <HeroSection />
+			<FormSection /> */}
 			<ConfirmationSection />
 		</main>
 	);
