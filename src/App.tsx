@@ -13,7 +13,7 @@ const App = () => {
 
 	let content;
 
-	if (!formCtx.isValid || formCtx.isDismissed || formCtx.isLoading) {
+	if (!formCtx.isValid || formCtx.isLoading) {
 		content = (
 			<>
 				<HeroSection />
@@ -22,12 +22,16 @@ const App = () => {
 		);
 	}
 
-	if (formCtx.isValid && !formCtx.isDismissed && !formCtx.isLoading) {
+	if (formCtx.isValid && !formCtx.isLoading) {
 		content = <ConfirmationSection />;
 	}
 
 	return (
-		<main className='main'>
+		<main
+			className={`main ${
+				formCtx.isValid && !formCtx.isLoading && 'main main--confirmation'
+			}`}
+		>
 			{content}
 			{formCtx.isLoading &&
 				ReactDOM.createPortal(

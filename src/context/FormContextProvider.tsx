@@ -1,13 +1,9 @@
 import { useState } from 'react';
 import { FormContext } from './form-context';
 import { useSubmit } from '../hooks/useSubmit';
-
-interface ProviderProps {
-	children: React.ReactNode;
-}
+import { ProviderProps } from '../models/interfaces';
 
 export const FormContextProvider: React.FC<ProviderProps> = ({ children }) => {
-	const [isDismissed, setIsDismissed] = useState(false);
 	const [isLoading, setIsLoading] = useState(false);
 	const { isValid, errorMsg, checkValue } = useSubmit();
 
@@ -21,7 +17,7 @@ export const FormContextProvider: React.FC<ProviderProps> = ({ children }) => {
 	};
 
 	const dismissHandler = () => {
-		setIsDismissed(true);
+		window.location.reload();
 	};
 
 	return (
@@ -29,7 +25,6 @@ export const FormContextProvider: React.FC<ProviderProps> = ({ children }) => {
 			value={{
 				isValid,
 				errorMsg,
-				isDismissed,
 				isLoading,
 				dismissHandler,
 				checkValidity,
