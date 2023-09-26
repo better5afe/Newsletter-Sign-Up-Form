@@ -25,6 +25,7 @@
 		background-color: colors.$charcoal-grey;
 		transform: translateX(-150%) skewX(-20deg);
 		animation: reflection 5s linear infinite;
+		animation-delay: 5s;
 		z-index: -2;
 	}
 
