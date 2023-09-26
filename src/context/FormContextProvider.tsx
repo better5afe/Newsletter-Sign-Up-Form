@@ -8,11 +8,16 @@ interface ProviderProps {
 
 export const FormContextProvider: React.FC<ProviderProps> = ({ children }) => {
 	const [isDismissed, setIsDismissed] = useState(false);
+	const [isLoading, setIsLoading] = useState(false);
 	const { isValid, errorMsg, checkValue } = useSubmit();
 
 	const checkValidity = (value: string) => {
-		setIsDismissed(false);
-		checkValue(value);
+		setIsLoading(true);
+
+		setTimeout(() => {
+			checkValue(value);
+			setIsLoading(false);
+		}, 2000);
 	};
 
 	const dismissHandler = () => {
@@ -21,7 +26,14 @@ export const FormContextProvider: React.FC<ProviderProps> = ({ children }) => {
 
 	return (
 		<FormContext.Provider
-			value={{ isValid, errorMsg, isDismissed, dismissHandler, checkValidity }}
+			value={{
+				isValid,
+				errorMsg,
+				isDismissed,
+				isLoading,
+				dismissHandler,
+				checkValidity,
+			}}
 		>
 			{children}
 		</FormContext.Provider>

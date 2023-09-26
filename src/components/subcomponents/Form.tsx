@@ -21,9 +21,11 @@ const Form = () => {
 				<label htmlFor='email' className='form__info-label'>
 					Email address
 				</label>
-				{!formCtx.isValid && formCtx.errorMsg.trim().length !== 0 && (
-					<p className='form__info-error'>{formCtx.errorMsg}</p>
-				)}
+				{!formCtx.isValid &&
+					formCtx.errorMsg.trim().length !== 0 &&
+					!formCtx.isLoading && (
+						<p className='form__info-error'>{formCtx.errorMsg}</p>
+					)}
 			</div>
 			<input
 				type='text'
@@ -33,6 +35,7 @@ const Form = () => {
 				className={`form__input ${
 					!formCtx.isValid &&
 					formCtx.errorMsg.trim().length !== 0 &&
+					!formCtx.isLoading &&
 					'form__input form__input--error'
 				}`}
 				onChange={(e) => setInputValue(e.target.value)}
