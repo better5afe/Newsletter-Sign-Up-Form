@@ -4,3 +4,8 @@ export interface ButtonProps {
 	onClick?: () => void;
 }
 
+export interface ErrorInterface {
+	isError: boolean;
+	errorMessage: string;
+}
+

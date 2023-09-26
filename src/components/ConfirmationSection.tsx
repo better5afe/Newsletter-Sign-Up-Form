@@ -1,10 +1,14 @@
+import { useContext } from 'react';
 import Button from './reusable/Button';
+import { FormContext } from '../context/form-context';
 
 import './ConfirmationSection.scss';
 
 const ConfirmationSection = () => {
+	const formCtx = useContext(FormContext);
+
 	const dismissHandler = () => {
-		console.log('Dismiss message!');
+		formCtx.dismissHandler()
 	};
 
 	return (

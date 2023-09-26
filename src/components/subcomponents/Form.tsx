@@ -1,16 +1,17 @@
-import { useState } from 'react';
-import { useSubmit } from '../../hooks/useSubmit';
+import { useState, useContext } from 'react';
 import Button from '../reusable/Button';
+import { FormContext } from '../../context/form-context';
 
 import './Form.scss';
 
 const Form = () => {
 	const [inputValue, setInputValue] = useState('');
-	const { error, checkValue } = useSubmit();
+
+	const formCtx = useContext(FormContext);
 
 	const submitFormHandler = (event: React.FormEvent) => {
 		event.preventDefault();
-		checkValue(inputValue);
+		formCtx.checkValidity(inputValue);
 		setInputValue('');
 	};
 
@@ -20,8 +21,8 @@ const Form = () => {
 				<label htmlFor='email' className='form__info-label'>
 					Email address
 				</label>
-				{error.isError && (
-					<p className='form__info-error'>{error.errorMessage}</p>
+				{!formCtx.isValid && formCtx.errorMsg.trim().length !== 0 && (
+					<p className='form__info-error'>{formCtx.errorMsg}</p>
 				)}
 			</div>
 			<input
@@ -29,7 +30,11 @@ const Form = () => {
 				placeholder='email@company.com'
 				value={inputValue}
 				id='email'
-				className={`form__input ${error.isError && 'form__input--error'}`}
+				className={`form__input ${
+					!formCtx.isValid &&
+					formCtx.errorMsg.trim().length !== 0 &&
+					'form__input form__input--error'
+				}`}
 				onChange={(e) => setInputValue(e.target.value)}
 			/>
 			<Button type='submit' text='Subscribe to monthly newsletter' />
