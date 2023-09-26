@@ -1,4 +1,5 @@
 @use '../../assets/colors.scss';
+@import url('../../assets/animations.scss');
 
 .button {
 	position: relative;
@@ -10,46 +11,44 @@
 	outline: none;
 	color: colors.$white;
 	font-weight: bolder;
+	letter-spacing: .5px;
 	cursor: pointer;
+	transition: box-shadow 0.5s;
 	z-index: 1;
+	overflow: hidden;
 
-	&::before,
-	&::after {
+	&__reflection {
 		position: absolute;
-		background: colors.$gradient-bg;
-		background: linear-gradient(
-			90deg,
-			colors.$gradient-initial 50%,
-			colors.$gradient-final 100%
-		);
-		content: '';
-		opacity: 0;
-		transition: opacity 0.5s;
+		top: 0;
+		bottom: 0;
+		width: 15%;
+		background-color: colors.$charcoal-grey;
+		transform: translateX(-150%) skewX(-20deg);
+		animation: reflection 5s linear infinite;
+		z-index: -2;
 	}
 
 	&::before {
+		position: absolute;
 		top: 0;
 		right: 0;
 		bottom: 0;
 		left: 0;
+		background: colors.$gradient-bg;
+		background: linear-gradient(90deg, colors.$gradient-initial 50%, 100%);
 		border-radius: 1rem;
+		content: '';
+		opacity: 0;
+		transition: opacity 0.5s;
 		z-index: -1;
 	}
 
-	&::after {
-		top: 10px;
-		right: -5px;
-		bottom: -5px;
-		left: -5px;
-		background: colors.$gradient-bg;
-		filter: blur(1em);
-		z-index: -5;
+	&:hover {
+		box-shadow: 0 0 1.5rem colors.$gradient-initial;
 	}
 
 	&:hover::before,
-	&:hover::after,
-	&:focus::before,
-	&:focus::after {
+	&:focus::before {
 		opacity: 1;
 	}
 }

@@ -1,7 +1,11 @@
 @use '../../assets/colors.scss';
+@import url('../../assets/animations.scss');
 
 .form {
 	padding: 1em 0 1.8em;
+	opacity: 0;
+	animation: slide-up 1.5s forwards;
+
 	&__info {
 		display: flex;
 		justify-content: space-between;

@@ -1,20 +1,39 @@
+@import url('../../assets/animations.scss');
+
 .sign-up {
 	padding: 0.8em 1.5em;
 
 	&__title {
 		margin-bottom: 0.5em;
 		font-size: 3.5rem;
+		opacity: 0;
+		animation: slide-in 1.5s forwards;
+		animation-delay: 1.3s;
 	}
 
 	&__description {
 		margin-bottom: 1em;
 		line-height: 1.5;
+		opacity: 0;
+		animation: slide-in 1.5s forwards;
+		animation-delay: 1.8s;
 	}
 
 	&__list-item {
 		display: flex;
 		align-items: flex-start;
 		margin-bottom: 0.5em;
+		opacity: 0;
+		animation: slide-in 1.5s forwards;
+		animation-delay: 2.3s;
+
+		&:nth-of-type(2) {
+			animation-delay: 2.8s;
+		}
+
+		&:nth-of-type(3) {
+			animation-delay: 3.3s;
+		}
 
 		&--icon {
 			margin-right: 1em;

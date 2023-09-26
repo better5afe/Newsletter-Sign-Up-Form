@@ -1,0 +1,49 @@
+@keyframes slide-in {
+	0% {
+		transform: translateX(-50%);
+		opacity: 0;
+	}
+
+	100% {
+		transform: translateX(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-down {
+	from {
+		transform: translateY(-50%);
+		opacity: 0;
+	}
+
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slide-up {
+	from {
+		transform: translateY(50%);
+		opacity: 0;
+	}
+
+    to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes reflection {
+	0% {
+		transform: translateX(-150%) skewX(-20deg);
+	}
+
+	15% {
+		transform: translateX(700%) skewX(-20deg);
+	}
+
+	100% {
+		transform: translateX(700%) skewX(-20deg);
+	}
+}
