@@ -6,10 +6,10 @@ import './App.scss';
 
 const App = () => {
 	return (
-		<main className='main main--confirmation'>
-			{/* <HeroSection />
-			<FormSection /> */}
-			<ConfirmationSection />
+		<main className='main'>
+			<HeroSection />
+			<FormSection />
+			{/* <ConfirmationSection /> */}
 		</main>
 	);
 };
